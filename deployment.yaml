@@ -18,7 +18,7 @@ spec:
         image: ${ORIGIN_REPO}/${REPO}:${IMAGE_TAG}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 9999
 
 ---
 apiVersion: v1
@@ -28,8 +28,8 @@ metadata:
   namespace: cicd
 spec:
   ports:
-  - port: 80
-    targetPort: 8080
+  - port: 9999
+    targetPort: 9999
     name: jenkins-java-demo
   selector:
     app: jenkins-java-demo
